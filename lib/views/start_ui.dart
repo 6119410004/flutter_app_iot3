@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app_iot3/views/login_ui.dart';
+
+import 'new_account_ui.dart';
 
 class StartUI extends StatefulWidget {
   const StartUI({Key? key}) : super(key: key);
@@ -106,7 +109,16 @@ class _StartUIState extends State<StartUI> {
                 height: 140.0,
               ),
               ElevatedButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context){
+                        return const LoginUI();
+                      }
+                    ),
+                  );
+                },
                 child: const Text(
                   'Log in',
                   style: TextStyle(
@@ -138,7 +150,16 @@ class _StartUIState extends State<StartUI> {
                     'You don\'t have an account?' ,
                   ),
                   InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context){
+                              return const NewAccountUI();
+                            },
+                        ),
+                      );
+                    },
                     child: const Text(
                       'Sign up here' ,
                       style: TextStyle(
